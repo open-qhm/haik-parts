@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QHM-haikテーマ | パーツ</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/main.css">
+  <link rel="stylesheet" href="assets/css/parts.css">
+</head>
+<body>
+  <div class="qhmhaik-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12" id="haik_parts_container">
+
+            <div class="row">
+              <div class="haik-parts-categories col-xs-6 col-sm-4 col-md-3" data-category="{{category.name}}" v-repeat="category: categories">
+                <div class="haik-parts-box thumbnail" v-on="click: showDetail(category)" class="haik-parts-clickable">
+                  <img class="haik-parts-thumbnail" v-attr="src: 'assets/img/parts/' + category.name + '.png'">
+                  <div class="haik-parts-caption">{{category.title}}</div>
+                  <div class="haik-parts-arrow-top" v-if="category.showDetail" v-transition></div>
+                </div>
+
+                <div class="haik-parts-category-detail" data-parent="{{category.name}}" v-if="category.showDetail" v-with="category" v-transition>
+                  {{> category-detail}}
+                </div>
+
+              </div>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="code_container"></div>
+
+  <script type="text/v-template" id="haik_parts_category_detail_partial">
+    <div class="container-fluid">
+        <div class="row haik-parts-list" id="haik_parts_list">
+          <div  class="{{category.name == 'icon' ? 'form-inline text-right col-xs-12' : 'hidden'}}">
+            <div class="form-group has-feedback" style="margin-bottom:10px;">
+              <label class="sr-only">検索ワード</label>
+              <input v-model="searchText" class="form-control">
+              <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="haik-parts-item {{category.name == 'icon' ? 'col-xs-2 col-sm-1 col-md-1' : 'col-xs-4 col-sm-3 col-md-2'}}" v-repeat="item: category.items |  filterBy searchText">
+            <div class="haik-parts-box thumbnail haik-parts-clickable {{category.name == 'icon' ? 'haik-parts-icon-wrap' : ''}}" data-toggle="{{modal ? 'modal' : ''}}" data-target="#haik_parts_code_modal_{{category.name}}_{{item.name}}" v-on="click: insertCode(item, category)">
+              <img class="haik-parts-console.log(arguments);" v-attr="src:'assets/img/parts/'+category.name+'_'+item.name+'.png'" v-if="category.name != 'icon'">
+              <i class="glyphicon glyphicon-{{item.name}} haik-parts-icon" src="thumbanils/{{category.name}}-{{item.name}}.png" v-if="category.name == 'icon'" title="{{item.title}}" data-toggle="tooltip" data-placement="top"></i>
+              <div class="haik-parts-caption {{category.name == 'icon' ? 'hidden' : ''}}" title="{{item.title}}">{{item.title}}</div>
+            </div>
+            <div id="haik_parts_code_modal_{{category.name}}_{{item.name}}" class="haik-parts-code modal fade">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                      <h4 class="modal-title">{{item.title}}</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div>
+                        <textarea class="form-control" rows="20" readonly onclick="this.select();">{{item.code}}</textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </script>
+
+  <script src="assets/js/jquery-2.1.1.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="assets/js/vue.js"></script>
+  <script src="assets/js/parts.js"></script>
+</body>
+</html>
