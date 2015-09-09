@@ -1,0 +1,873 @@
+[
+  {
+    "name": "eyecatch",
+    "title": "アイキャッチ",
+    "items": [
+      {
+        "name": "basic",
+        "title": "ベーシック",
+        "code": ""
+      },
+      {
+        "name": "modern",
+        "title": "背景固定",
+        "code": ""
+      },
+      {
+        "name": "video",
+        "title": "動画再生ボタン",
+        "code": ""
+      },
+      {
+        "name": "slide",
+        "title": "スライドショー",
+        "code": ""
+      },
+      {
+        "name": "fullpage",
+        "title": "全画面",
+        "code": ""
+      },
+      {
+        "name": "bgvideo",
+        "title": "動画背景",
+        "code": ""
+      },
+      {
+        "name": "para2_image",
+        "title": "２段組 (画像)",
+        "code": ""
+      },
+      {
+        "name": "para2_form",
+        "title": "２段組 (フォーム)",
+        "code": ""
+      }
+   ]
+  },
+  {
+    "name": "navi",
+    "title": "ナビ",
+    "items": [
+      {
+        "name": "left",
+        "title": "左揃え",
+        "code": ""
+      },
+      {
+        "name": "right",
+        "title": "右揃え",
+        "code": ""
+      },
+      {
+        "name": "equal",
+        "title": "均等割り付け",
+        "code": ""
+      },
+      {
+        "name": "search",
+        "title": "検索ボックス付き",
+        "code": ""
+      },
+      {
+        "name": "icon",
+        "title": "アイコンあり",
+        "code": ""
+      },
+      {
+        "name": "onepage",
+        "title": "ワンページ用",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "menu",
+    "title": "メニュー",
+    "items": [
+      {
+        "name": "simple",
+        "title": "シンプル",
+        "code": ""
+      },
+      {
+        "name": "anchor",
+        "title": "ページ内リンク",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "footer",
+    "title": "フッター",
+    "items": [
+      {
+        "name": "simple",
+        "title": "シンプル",
+        "code": ""
+      },
+      {
+        "name": "para3",
+        "title": "3段組検索付き",
+        "code": ""
+      },
+      {
+        "name": "blog",
+        "title": "ブログ記事付き",
+        "code": ""
+      },
+      {
+        "name": "facebook",
+        "title": "Facebook付き",
+        "code": ""
+      },
+      {
+        "name": "section",
+        "title": "4段組背景色付き",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "text",
+    "title": "本文",
+    "items": [
+      {
+        "name": "subhead",
+        "title": "見出し+サブ見出し",
+        "code": ""
+      },
+      {
+        "name": "indent",
+        "title": "インデント",
+        "code": ""
+      },
+      {
+        "name": "definition",
+        "title": "定義文",
+        "code": ""
+      },
+      {
+        "name": "html",
+        "title": "HTMLソース",
+        "code": ""
+      },
+      {
+        "name": "disqus",
+        "title": "DISQUSコメント",
+        "code": "",
+        "visible": false
+      }
+    ]
+  },
+  {
+    "name": "cols",
+    "title": "段組み",
+    "items": [
+      {
+        "name": "para2",
+        "title": "2段組み（均等）",
+        "code": ""
+      },
+      {
+        "name": "para2_48",
+        "title": "2段組み（4:8）",
+        "code": ""
+      },
+      {
+        "name": "para3",
+        "title": "3段組み（均等）",
+        "code": ""
+      },
+      {
+        "name": "space_small",
+        "title": "余白小",
+        "code": ""
+      },
+      {
+        "name": "space_large",
+        "title": "余白大",
+        "code": ""
+      },
+      {
+        "name": "para2_space",
+        "title": "余白付き2段組み",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "section",
+    "title": "セクション",
+    "items": [
+      {
+        "name": "default1",
+        "title": "デフォルト1",
+        "code": ""
+      },
+      {
+        "name": "default2",
+        "title": "デフォルト2",
+        "code": ""
+      },
+      {
+        "name": "bgcolor",
+        "title": "背景色型",
+        "code": ""
+      },
+      {
+        "name": "bgimage",
+        "title": "背景画像型",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "box",
+    "title": "枠",
+    "items": [
+      {
+        "name": "alert_danger",
+        "title": "注意書き",
+        "code": ""
+      },
+      {
+        "name": "alert_info",
+        "title": "ヒント、お知らせ",
+        "code": ""
+      },
+      {
+        "name": "panel_default",
+        "title": "色の枠で囲む",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "example",
+    "title": "パーツ例",
+    "items": [
+      {
+        "name": "3features",
+        "title": "3つの特徴",
+        "code": ""
+      },
+      {
+        "name": "member",
+        "title": "メンバー紹介",
+        "code": ""
+      },
+      {
+        "name": "cards",
+        "title": "カード表示",
+        "code": ""
+      },
+      {
+        "name": "around_image",
+        "title": "画像回り込み",
+        "code": ""
+      },
+      {
+        "name": "carousel",
+        "title": "スライドショー",
+        "code": ""
+      },
+      {
+        "name": "gallery",
+        "title": "ギャラリー",
+        "code": ""
+      },
+      {
+        "name": "gmap",
+        "title": "Googleマップ",
+        "code": ""
+      },
+      {
+        "name": "qform",
+        "title": "自動返信フォーム",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "icon",
+    "title": "アイコン",
+    "items": [
+      {
+        "name": "asterisk",
+        "title": "asterisk",
+        "code": "&icon(asterisk);",
+        "keyword": "アスタリスク,コメ,こめ,米"
+      },
+      {
+        "name": "plus",
+        "title": "plus",
+        "code": "&icon(plus);",
+        "keyword": "プラス,足す,拡大"
+      },
+      {
+        "name": "minus",
+        "title": "minus",
+        "code": "&icon(minus);",
+        "keyword": "マイナス,引く,縮小"
+      },
+      {
+        "name": "envelope",
+        "title": "envelope",
+        "code": "&icon(envelope);",
+        "keyword": "mail,メール"
+      },
+      {
+        "name": "pencil",
+        "title": "pencil",
+        "code": "&icon(pencil);",
+        "keyword": "ペン,鉛筆,えんぴつ,pen"
+      },
+      {
+        "name": "music",
+        "title": "music",
+        "code": "&icon(music);",
+        "keyword": "音楽,音符,オーディオ,ミュージック"
+      },
+      {
+        "name": "search",
+        "title": "search",
+        "code": "&icon(search);",
+        "keyword": "検索,虫めがね,虫メガネ"
+      },
+      {
+        "name": "home",
+        "title": "home",
+        "code": "&icon(home);",
+        "keyword": "ホーム,家,top,トップ"
+      },
+      {
+        "name": "time",
+        "title": "time",
+        "code": "&icon(time);",
+        "keyword": "時間,時計"
+      },
+      {
+        "name": "file",
+        "title": "file",
+        "code": "&icon(file);",
+        "keyword": "ファイル"
+      },
+      {
+        "name": "gift",
+        "title": "gift",
+        "code": "&icon(gift);",
+        "keyword": "ギフト,プレゼント"
+      },
+      {
+        "name": "plane",
+        "title": "plane",
+        "code": "&icon(plane);",
+        "keyword": "飛行機"
+      },
+      {
+        "name": "calendar",
+        "title": "calendar",
+        "code": "&icon(calendar);",
+        "keyword": "カレンダー,スケジュール"
+      },
+      {
+        "name": "comment",
+        "title": "comment",
+        "code": "&icon(comment);",
+        "keyword": "コメント,吹き出し"
+      },
+      {
+        "name": "shopping-cart",
+        "title": "shopping-cart",
+        "code": "&icon(shopping-cart);",
+        "keyword": "カート,ショッピング"
+      },
+      {
+        "name": "globe",
+        "title": "globe",
+        "code": "&icon(globe);",
+        "keyword": "グローバル,地球"
+      },
+      {
+        "name": "wrench",
+        "title": "wrench",
+        "code": "&icon(wrench);",
+        "keyword": "レンチ,設定,工具"
+      },
+      {
+        "name": "cog",
+        "title": "cog",
+        "code": "&icon(cog);",
+        "keyword": "歯車,設定,工具"
+      },
+      {
+        "name": "book",
+        "title": "book",
+        "code": "&icon(book);",
+        "keyword": "本,ブック"
+      },
+      {
+        "name": "paperclip",
+        "title": "paperclip",
+        "code": "&icon(paperclip);",
+        "keyword": "クリップ"
+      },
+      {
+        "name": "phone",
+        "title": "phone",
+        "code": "&icon(phone);",
+        "keyword": "携帯,スマホ,電話,スマートフォン,モバイル"
+      },
+      {
+        "name": "pushpin",
+        "title": "pushpin",
+        "code": "&icon(pushpin);",
+        "keyword": "押しピン,ピン"
+      },
+      {
+        "name": "earphone",
+        "title": "earphone",
+        "code": "&icon(earphone);",
+        "keyword": "電話"
+      },
+      {
+        "name": "cutlery",
+        "title": "cutlery",
+        "code": "&icon(cutlery);",
+        "keyword": "食事,ナイフ,フォーク,ごはん,ディナー,ランチ"
+      },
+      {
+        "name": "film",
+        "title": "film",
+        "code": "&icon(film);",
+        "keyword": "動画,フィルム,映画,ビデオ"
+      },
+      {
+        "name": "facetime-video",
+        "title": "facetime-video",
+        "code": "&icon(facetime-video);",
+        "keyword": "動画,ビデオ"
+      },
+      {
+        "name": "picture",
+        "title": "picture",
+        "code": "&icon(picture);",
+        "keyword": "絵,ピクチャー,写真"
+      },
+      {
+        "name": "camera",
+        "title": "camera",
+        "code": "&icon(camera);",
+        "keyword": "カメラ,写真"
+      },
+      {
+        "name": "map-marker",
+        "title": "map-marker",
+        "code": "&icon(map-marker);",
+        "keyword": "位置,地図,マーカー"
+      },
+      {
+        "name": "user",
+        "title": "user",
+        "code": "&icon(user);",
+        "keyword": "ユーザー,人"
+      },
+      {
+        "name": "stats",
+        "title": "stats",
+        "code": "&icon(stats);",
+        "keyword": "統計,グラフ"
+      },
+      {
+        "name": "heart",
+        "title": "heart",
+        "code": "&icon(heart);",
+        "keyword": "ハート"
+      },
+      {
+        "name": "heart-empty",
+        "title": "heart-empty",
+        "code": "&icon(heart-empty);",
+        "keyword": "ハート"
+      },
+      {
+        "name": "star",
+        "title": "star",
+        "code": "&icon(star);",
+        "keyword": "星,スター"
+      },
+      {
+        "name": "star-empty",
+        "title": "star-empty",
+        "code": "&icon(star-empty);",
+        "keyword": "星,スター"
+      },
+      {
+        "name": "th",
+        "title": "th",
+        "code": "&icon(th);",
+        "keyword": "テーブル,セル"
+      },
+      {
+        "name": "ok",
+        "title": "ok",
+        "code": "&icon(ok);",
+        "keyword": "オッケー,成功,チェック"
+      },
+      {
+        "name": "remove",
+        "title": "remove",
+        "code": "&icon(remove);",
+        "keyword": "バツ,終了,閉じる"
+      },
+      {
+        "name": "zoom-in",
+        "title": "zoom-in",
+        "code": "&icon(zoom-in);",
+        "keyword": "ズームイン,拡大"
+      },
+      {
+        "name": "zoom-out",
+        "title": "zoom-out",
+        "code": "&icon(zoom-out);",
+        "keyword": "ズームアウト,縮小"
+      },
+      {
+        "name": "trash",
+        "title": "trash",
+        "code": "&icon(trash);",
+        "keyword": "ごみ,ゴミ箱,捨てる"
+      },
+      {
+        "name": "download",
+        "title": "download",
+        "code": "&icon(download);",
+        "keyword": "ダウンロード"
+      },
+      {
+        "name": "play-circle",
+        "title": "play-circle",
+        "code": "&icon(play-circle);",
+        "keyword": "再生"
+      },
+      {
+        "name": "lock",
+        "title": "lock",
+        "code": "&icon(lock);",
+        "keyword": "ロック,鍵をかける,秘密"
+      },
+      {
+        "name": "send",
+        "title": "send",
+        "code": "&icon(send);",
+        "keyword": "送信,飛行機,折り紙,メール"
+      },
+      {
+        "name": "headphones",
+        "title": "headphones",
+        "code": "&icon(headphones);",
+        "keyword": "イヤフォン,オーディオ,音楽,ミュージック"
+      },
+      {
+        "name": "plus-sign",
+        "title": "plus-sign",
+        "code": "&icon(plus-sign);",
+        "keyword": "足す,プラス,拡大"
+      },
+      {
+        "name": "minus-sign",
+        "title": "minus-sign",
+        "code": "&icon(minus-sign);",
+        "keyword": "引く,マイナス,縮小"
+      },
+      {
+        "name": "remove-sign",
+        "title": "remove-sign",
+        "code": "&icon(remove-sign);",
+        "keyword": "バツ,終了,閉じる"
+      },
+      {
+        "name": "ok-sign",
+        "title": "ok-sign",
+        "code": "&icon(ok-sign);",
+        "keyword": "オッケー,成功,チェック"
+      },
+      {
+        "name": "question-sign",
+        "title": "question-sign",
+        "code": "&icon(question-sign);",
+        "keyword": "質問,クエスチョン,問題,ヘルプ"
+      },
+      {
+        "name": "info-sign",
+        "title": "info-sign",
+        "code": "&icon(info-sign);",
+        "keyword": "情報,インフォメーション,注意"
+      },
+      {
+        "name": "exclamation-sign",
+        "title": "exclamation-sign",
+        "code": "&icon(exclamation-sign);",
+        "keyword": "情報,注意,ヒント"
+      },
+      {
+        "name": "warning-sign",
+        "title": "warning-sign",
+        "code": "&icon(warning-sign);",
+        "keyword": "情報,警告,ワーニング"
+      },
+      {
+        "name": "remove-circle",
+        "title": "remove-circle",
+        "code": "&icon(remove-circle);",
+        "keyword": "バツ,終了,閉じる"
+      },
+      {
+        "name": "ok-circle",
+        "title": "ok-circle",
+        "code": "&icon(ok-circle);",
+        "keyword": "オッケー,成功,チェック"
+      },
+      {
+        "name": "ban-circle",
+        "title": "ban-circle",
+        "code": "&icon(ban-circle);",
+        "keyword": "停止,ストップ,禁止"
+      },
+      {
+        "name": "share-alt",
+        "title": "share-alt",
+        "code": "&icon(share-alt);",
+        "keyword": "シェア,共有"
+      },
+      {
+        "name": "chevron-up",
+        "title": "chevron-up",
+        "code": "&icon(chevron-up);",
+        "keyword": "上,矢印,やじるし"
+      },
+      {
+        "name": "chevron-down",
+        "title": "chevron-down",
+        "code": "&icon(chevron-down);",
+        "keyword": "下,矢印,やじるし"
+      },
+      {
+        "name": "thumbs-up",
+        "title": "thumbs-up",
+        "code": "&icon(thumbs-up);",
+        "keyword": "いいね,手,ハンド"
+      },
+      {
+        "name": "hand-right",
+        "title": "hand-right",
+        "code": "&icon(hand-right);",
+        "keyword": "右,手,ハンド"
+      },
+      {
+        "name": "hand-left",
+        "title": "hand-left",
+        "code": "&icon(hand-left);",
+        "keyword": "左,手,ハンド"
+      },
+      {
+        "name": "hand-up",
+        "title": "hand-up",
+        "code": "&icon(hand-up);",
+        "keyword": "上,手,ハンド"
+      },
+      {
+        "name": "hand-down",
+        "title": "hand-down",
+        "code": "&icon(hand-down);",
+        "keyword": "下,手,ハンド"
+      }
+    ]
+  },
+  {
+    "name": "button",
+    "title": "ボタン",
+    "items": [
+      {
+        "name": "default",
+        "title": "default",
+        "code": "&button(リンク先){ボタン};"
+      },
+      {
+        "name": "primary",
+        "title": "primary",
+        "code": "&button(リンク先,primary){ボタン};"
+      },
+      {
+        "name": "success",
+        "title": "success",
+        "code": "&button(リンク先,success){ボタン};"
+      },
+      {
+        "name": "info",
+        "title": "info",
+        "code": "&button(リンク先,info){ボタン};"
+      },
+      {
+        "name": "warning",
+        "title": "warning",
+        "code": "&button(リンク先,warning){ボタン};"
+      },
+      {
+        "name": "danger",
+        "title": "danger",
+        "code": "&button(リンク先,danger){ボタン};"
+      },
+      {
+        "name": "small",
+        "title": "小さいボタン",
+        "code": "&button(リンク先,small){ボタン};"
+      },
+      {
+        "name": "large",
+        "title": "大きいボタン",
+        "code": "&button(リンク先,large){ボタン};"
+      },
+      {
+        "name": "icon",
+        "title": "アイコン付きボタン",
+        "code": "&button(リンク先){&icon(envelope); お問い合わせ};"
+      },
+      {
+        "name": "round",
+        "title": "角丸ボタン",
+        "code": "&button(リンク先,danger,round){ボタン};"
+      },
+      {
+        "name": "ghost",
+        "title": "縁取りボタン",
+        "code": "&button(リンク先,info,ghost){ボタン};"
+      },
+      {
+        "name": "ghost-w",
+        "title": "白縁取りボタン",
+        "code": "&button(リンク先,ghost-w){ボタン};"
+      },
+      {
+        "name": "gradient",
+        "title": "グラデーションボタン",
+        "code": "&button(リンク先,primary,gradient){ボタン};"
+      }
+    ]
+  },
+  {
+    "name": "label",
+    "title": "ラベル",
+    "items": [
+      {
+        "name": "default",
+        "title": "default",
+        "code": "&label{ラベル};"
+      },
+      {
+        "name": "primary",
+        "title": "primary",
+        "code": "&label(primary){ラベル};"
+      },
+      {
+        "name": "success",
+        "title": "success",
+        "code": "&label(success){ラベル};"
+      },
+      {
+        "name": "info",
+        "title": "info",
+        "code": "&label(info){ラベル};"
+      },
+      {
+        "name": "warning",
+        "title": "warning",
+        "code": "&label(warning){ラベル};"
+      },
+      {
+        "name": "danger",
+        "title": "danger",
+        "code": "&label(danger){ラベル};"
+      }
+    ]
+  },
+  {
+    "name": "table",
+    "title": "テーブル",
+    "items": [
+      {
+        "name": "simple",
+        "title": "シンプル",
+        "code": ""
+      },
+      {
+        "name": "stripe",
+        "title": "ストライプ",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "media",
+    "title": "メディア",
+    "items": [
+      {
+        "name": "video",
+        "title": "動画再生",
+        "code": ""
+      },
+      {
+        "name": "video_popup",
+        "title": "ポップアップ動画再生",
+        "code": "&video(video.mp4){&icon(fa,play-circle-o,3x);};"
+      },
+      {
+        "name": "audio",
+        "title": "音声再生",
+        "code": ""
+      },
+      {
+        "name": "audio_compact",
+        "title": "音声再生（ミニ）",
+        "code": ""
+      }
+    ]
+  },
+  {
+    "name": "layout",
+    "title": "レイアウト",
+    "items": [
+      {
+        "name": "default_p",
+        "title": "メニューあり",
+        "code": ""
+      },
+      {
+        "name": "nomenu_p",
+        "title": "メニューなし",
+        "code": ""
+      },
+      {
+        "name": "article_p",
+        "title": "ブログ",
+        "code": ""
+      },
+      {
+        "name": "wide_p",
+        "title": "ワイド",
+        "code": ""
+      },
+      {
+        "name": "landing_p",
+        "title": "ランディング",
+        "code": ""
+      },
+      {
+        "name": "fullpage",
+        "title": "フルページ",
+        "code": ""
+      }
+    ]
+  }
+]
