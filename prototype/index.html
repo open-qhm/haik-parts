@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QHM-haikテーマ | プロトタイプ</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/parts.css">
+</head>
+<body>
+  <header>
+    <nav class="qhmhaik-navbar navbar navbar-default">
+      <div class="container">
+        <div class="">
+          <div class="row">
+            <div class="col-sm-8">
+              <h1><a class="qhmhaik-brand" href="index.html">プロトタイプ パーツ</a></h1>
+              <p>各パーツをクリックすると、書き方ダイアログが表示されます。<br>書き方をコピーして編集画面に貼付けてご利用ください。</p>
+            </div>
+            <div class="col-sm-4">
+              <div style="margin: 30px 0 15px"><a href="assets/pdf/mockuptool.pdf" target="_blank" class="btn btn-default">印刷用パーツ（PDF）</a></div>
+              <p>この印刷用パーツは、紙プロトタイプとして印刷して切って使ってください</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="qhmhaik-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12" id="haik_parts_container">
+
+              <div class="row">
+                <div class="haik-parts-categories col-xs-6 col-sm-4 col-md-3" data-category="{{category.name}}" v-repeat="category: categories">
+                  <div class="haik-parts-box thumbnail" v-on="click: insertCode(category)" data-toggle="modal" data-target="#haik_parts_code_modal_{{category.name}}" class="haik-parts-clickable">
+                    <img class="haik-parts-thumbnail" src="../assets/img/parts/prototype/{{category.name}}.png">
+                    <div class="haik-parts-caption">{{category.title}}</div>
+                  </div>
+
+                  <div class="haik-parts-category-detail" data-parent="{{category.name}}" v-with="category" v-transition>
+                    {{> category-detail}}
+                  </div>
+
+                </div>
+
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <div id="code_container"></div>
+
+  <script type="text/v-template" id="haik_parts_category_detail_partial">
+    <div id="haik_parts_code_modal_{{category.name}}" class="haik-parts-code modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">{{category.title}}</h4>
+          </div>
+          <div class="modal-body">
+            <div>
+              <textarea class="form-control" rows="20" readonly onclick="this.select();">{{category.code}}</textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default copy-button"><i class="fa fa-copy"></i> {{ copied ? 'コピーしました' : 'コピー' }}</button>
+            <button type="button" class="btn btn-link" data-dismiss="modal" style="color: #777"><i class="fa fa-times"></i> 閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/javascript" src="../assets/js/jquery-2.1.1.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../assets/js/vue.js"></script>
+  <script type="text/javascript" src="../assets/js/ZeroClipboard.min.js"></script>
+  <script type="text/javascript" src="../assets/js/parts-prototype.js"></script>
+</body>
+</html>
