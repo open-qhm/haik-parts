@@ -6,17 +6,26 @@
   if (location.hash.length > 1) {
     onHashChange();
   } else {
-    $.when(loadPartsData(), loadPartsSource());
+    loadParts()
   }
 
   $(window).on("hashchange", onHashChange);
 
   function onHashChange() {
     partsName = location.hash.substr(1);
-    $.when(
+    loadParts(partsName, function(){
+      loadParts();
+    });
+  }
+
+  function loadParts(partsName, cb) {
+    var promise = $.when(
       loadPartsData(partsName),
       loadPartsSource(partsName)
     );
+    if (cb) {
+      promise.fail(cb);
+    }
   }
 
   function loadPartsData(partsName) {
@@ -45,8 +54,7 @@
       promise.resolve(partsName);
     })
     .fail(function(err, error, message){
-      alert("パーツデータが読み込めません：" + err.status + " " + message);
-      promise.reject();
+      promise.reject("パーツデータが読み込めません：" + err.status + " " + message);
     });
 
     return promise;
@@ -70,8 +78,7 @@
       promise.resolve(partsName);
     })
     .fail(function(err, error, message){
-      alert("パーツ詳細が読み込めません：" + err.status + " " + message);
-      promise.reject();
+      promise.reject("パーツ詳細が読み込めません：" + err.status + " " + message);
     });
   }
 
