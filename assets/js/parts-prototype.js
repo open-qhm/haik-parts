@@ -1,93 +1,92 @@
-$(function () {
+(function ($) {
 
-  var opener = window.parent;
-  var haikParts = {};
-/*
-  if (typeof haikParts.parts === "undefined") {
-    if (typeof localStorage.haikParts === "undefined") {
-*/
-  var partsFile = "data/girls.parts.json";
-  
-  haikParts.parts = $.ajax({
-    url: partsFile,
-    async: false,
-    dataType: "json"
-  }).responseJSON;
+  var opener = window.parent,
+      partsName = '';
 
-  for (var i in haikParts.parts) {
-    if (haikParts.parts[i].code.length == 0) {
-      var id = 'haik_parts_code_' + haikParts.parts[i].name;
-      $("#" + id).each(function(){
-       haikParts.parts[i].code = $(this).text();
-      });
-    }
+  $.when(loadPartsData(), loadPartsSource());
 
-    if (typeof haikParts.parts[i].visible != 'undefined') {
-      if ( ! haikParts.parts[i].visible) {
-        haikParts.parts.splice(i, 1);
+
+  function loadPartsData() {
+    var promise = $.Deferred();
+
+    partsFile = "../data/prototype.parts.json";
+
+    $.ajax({
+      url: partsFile,
+      dataType: "json"
+    })
+    .done(function(parts){
+      for (var i in parts) {
+        if (typeof parts[i].visible != 'undefined') {
+          if ( ! parts[i].visible) {
+            parts.splice(i, 1);
+          }
+        }
       }
-    }
+
+      vParts.categories = parts;
+      promise.resolve('');
+    })
+    .fail(function(err, error, message){
+      alert("パーツデータが読み込めません：" + err.status + " " + message);
+      promise.reject();
+    });
+
+    return promise;
   }
 
-/*
-      localStorage.haikParts = JSON.stringify(haikParts.parts);
-    }
-    else {
-      haikParts.parts = JSON.parse(localStorage.haikParts);
-    }
+
+  function loadPartsSource() {
+    var promise = $.Deferred();
+    
+    sourceFile = "../data/code/prototype.code.html";
+
+    $.ajax({
+      url: sourceFile,
+      dataType: "html"
+    })
+    .done(function(html){
+      $("#code_container").html(html);
+      promise.resolve('');
+    })
+    .fail(function(err, error, message){
+      alert("パーツ詳細が読み込めません：" + err.status + " " + message);
+      promise.reject();
+    });
   }
-*/
+
   var vParts = new Vue({
     el: "#haik_parts_container",
     data: {
-      categories: haikParts.parts,
-      modal: true,
+      categories: [],
       activeFile: null,
-      activeCode: null
+      activeCode: null,
+      copied: false
     },
     methods: {
-/*
-      showDetail: function(cat){
-
-        $(".haik-parts-categories").css({height: "auto"}).find(".haik-parts-box").css({opacity: 1});
-
-        if (this.activeFile) {
-          this.activeFile.showDetail = false;
-        }
-
-        if (this.activeFile === cat) {
-          this.activeFile = null;
-          return;
-        }
-        cat.showDetail = true;
-        this.activeFile = cat;
-
-        setTimeout(function(){
-          var $parent = $("[data-category="+cat.name+"]");
-          var detailHeight = $("[data-parent="+cat.name+"]").height();
-          
-          $parent.height($parent.height()+detailHeight+40);
-          $parent.siblings().find(".haik-parts-box").css({opacity: ".2"});
-          if (cat.name == 'icon') {
-            $("[data-toggle=tooltip]").tooltip();
-          }
-
-          var p = $parent.offset().top;
-          $('html,body').animate({ scrollTop: p }, 500);
-
-        }, 300);
-      },
-*/
       insertCode: function(category){
-        if (this.modal === false) {
-          opener.postMessage({
-            message: "sendCode",
-            code: category.code
-          }, "*");
-        }
-        else {
-          $("#haik_parts_code_modal_"+category.name).appendTo("body");
-        }
+        var $modal = $("#haik_parts_code_modal_" + category.name);
+        var code = $("#haik_parts_code_"+category.name).text();
+        
+        vParts.copied = false;
+
+        $modal
+        .find("textarea").val(code).end()
+        .appendTo("body");
+        
+        $modal.one("shown.bs.modal", function(){
+          $("textarea", this).click();
+        });
+
+        var client = new ZeroClipboard($(".copy-button", $modal));
+        client.on("ready", function(readyEvent ) {
+          client.on("copy", function(event) {
+            event.clipboardData.setData('text/plain', code);
+          });
+          client.on("aftercopy", function(event){
+            vParts.copied = true;
+          });
+        });
       }
     },
     partials: {
@@ -95,26 +94,6 @@ $(function () {
     }
   });
 
-  if ( ! opener) {
-    return;
-  }
-
-  var messageListner = function(ev) {
-    if (ev.data.message === "openerIsEditable") {
-      vParts.$data.modal = false;
-      $("header").hide();
-    }
-    else if (ev.data.message === "insertedText") {
-      if (window.parent !== window) {
-        window.close();
-      }
-    }
-  };
-
-  window.addEventListener("message", messageListner);
-  opener.postMessage({
-    message: "isOpenerEditable"
-  }, "*");
-  
+  window.vParts = vParts;
 	
-});
+})(jQuery);

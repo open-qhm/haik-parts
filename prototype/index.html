@@ -1,45 +1,14 @@
-<?php
-
-$tmpl_file = 'views/index_girls.html';
-ob_start();
-include($tmpl_file);
-$body = ob_get_clean();
-
-$parts = '';
-$code_file = 'views/girls.code.html';
-$query_hash = array();
-parse_str($_SERVER['QUERY_STRING'], $query_hash);
-if ($query_hash)
-{
-    if (isset($query_hash['theme']))
-    {
-        if (in_array($query_hash['theme'], array('haik_flat','haik_moi','haik_bio','haik_kinaco','haik_pop','haik_cool','haik_fabric','haik_doc','haik_tent','haik_drawing'))) {
-            $parts = 'palette';
-			$theme = htmlentities($query_hash['theme']);
-			$code_file = 'views/palette.code.html';
-			if (file_exists('views/'.$query_hash['theme'].'.code.html'))
-			{
-				$code_file = 'views/'.$query_hash['theme'].'.code.html';
-				$parts = $query_hash['theme'];
-			}
-        }
-    }
-}
-ob_start();
-include($code_file);
-$code = ob_get_clean();
-
-?>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>QHM-haikテーマ | パーツ</title>
+  <title>QHM-haikテーマ | プロトタイプ</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/parts.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/parts.css">
 </head>
 <body>
   <header>
@@ -48,7 +17,7 @@ $code = ob_get_clean();
         <div class="">
           <div class="row">
             <div class="col-sm-8">
-              <h1><a class="qhmhaik-brand" href="index_girls.php">QHM女子会 パーツ</a></h1>
+              <h1><a class="qhmhaik-brand" href="index.html">プロトタイプ パーツ</a></h1>
               <p>各パーツをクリックすると、書き方ダイアログが表示されます。<br>書き方をコピーして編集画面に貼付けてご利用ください。</p>
             </div>
             <div class="col-sm-4">
@@ -61,7 +30,7 @@ $code = ob_get_clean();
     </nav>
   </header>
 
-  <div class="qhmhaik-content" data-parts="<?php echo $parts ?>">
+  <div class="qhmhaik-content">
       <div class="container">
         <div class="row">
           <div class="col-sm-12" id="haik_parts_container">
@@ -69,7 +38,7 @@ $code = ob_get_clean();
               <div class="row">
                 <div class="haik-parts-categories col-xs-6 col-sm-4 col-md-3" data-category="{{category.name}}" v-repeat="category: categories">
                   <div class="haik-parts-box thumbnail" v-on="click: insertCode(category)" data-toggle="modal" data-target="#haik_parts_code_modal_{{category.name}}" class="haik-parts-clickable">
-                    <img class="haik-parts-thumbnail" src="thumbnails/girls/{{category.name}}.png">
+                    <img class="haik-parts-thumbnail" src="../assets/img/parts/prototype/{{category.name}}.png">
                     <div class="haik-parts-caption">{{category.title}}</div>
                   </div>
 
@@ -87,32 +56,34 @@ $code = ob_get_clean();
 
   </div>
 
-  <?php echo $code ?>
+  <div id="code_container"></div>
 
   <script type="text/v-template" id="haik_parts_category_detail_partial">
-          <div id="haik_parts_code_modal_{{category.name}}" class="haik-parts-code modal fade">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  <h4 class="modal-title">{{category.title}}</h4>
-                </div>
-                <div class="modal-body">
-                  <div>
-                    <textarea class="form-control" rows="20" readonly onclick="this.select();">{{category.code}}</textarea>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-                </div>
-              </div>
+    <div id="haik_parts_code_modal_{{category.name}}" class="haik-parts-code modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">{{category.title}}</h4>
+          </div>
+          <div class="modal-body">
+            <div>
+              <textarea class="form-control" rows="20" readonly onclick="this.select();">{{category.code}}</textarea>
             </div>
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default copy-button"><i class="fa fa-copy"></i> {{ copied ? 'コピーしました' : 'コピー' }}</button>
+            <button type="button" class="btn btn-link" data-dismiss="modal" style="color: #777"><i class="fa fa-times"></i> 閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </script>
 
-  <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery-2.1.1.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="assets/js/vue.js"></script>
-  <script type="text/javascript" src="assets/js/parts-girls.js"></script>
+  <script type="text/javascript" src="../assets/js/vue.js"></script>
+  <script type="text/javascript" src="../assets/js/ZeroClipboard.min.js"></script>
+  <script type="text/javascript" src="../assets/js/parts-prototype.js"></script>
 </body>
 </html>
