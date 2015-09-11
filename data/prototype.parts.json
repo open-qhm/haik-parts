@@ -1,0 +1,147 @@
+[
+  {
+    "name": "eyecatch_phone",
+    "title": "02 電話番号付きアイキャッチ",
+    "code": ""
+  },
+  {
+    "name": "eyecatch_center",
+    "title": "03 アイキャッチ中央揃え",
+    "code": ""
+  },
+  {
+    "name": "eyecatch_left",
+    "title": "04 アイキャッチ左揃え",
+    "code": ""
+  },
+  {
+    "name": "eyecatch_button",
+    "title": "05 ボタン付きアイキャッチ",
+    "code": ""
+  },
+  {
+    "name": "contents_greetings",
+    "title": "06 店長のごあいさつ",
+    "code": ""
+  },
+  {
+    "name": "contents_center",
+    "title": "07 見出し+文章中央揃え",
+    "code": ""
+  },
+  {
+    "name": "contents_left",
+    "title": "08 見出し+文章左揃え",
+    "code": ""
+  },
+  {
+    "name": "contents_image_right",
+    "title": "09 説明+画像（右）",
+    "code": ""
+  },
+  {
+    "name": "contents_image_left",
+    "title": "10 説明+画像（左）",
+    "code": ""
+  },
+  {
+    "name": "contents_alternate",
+    "title": "11 説明+画像（左右）セット",
+    "code": ""
+  },
+  {
+    "name": "contents_side_image",
+    "title": "12 文章の両端に画像",
+    "code": ""
+  },
+  {
+    "name": "contents_2col_image",
+    "title": "13 2つの項目を並べる（画像付き）",
+    "code": ""
+  },
+  {
+    "name": "contents_2col_button",
+    "title": "14 2つの項目を並べる（ボタン付き）",
+    "code": ""
+  },
+  {
+    "name": "contents_2col_2para",
+    "title": "15 画像（左）+説明セット",
+    "code": ""
+  },
+  {
+    "name": "contents_3col_thumbnails",
+    "title": "16 3つの項目を並べる（枠付き）",
+    "code": ""
+  },
+  {
+    "name": "contents_3col_circle",
+    "title": "17 丸い画像を3つ並べて説明",
+    "code": ""
+  },
+  {
+    "name": "contents_box",
+    "title": "18 枠付き説明（強調したい内容の時）",
+    "code": ""
+  },
+  {
+    "name": "images_gallery",
+    "title": "19 画像をたくさん並べる",
+    "code": ""
+  },
+  {
+    "name": "images_one",
+    "title": "20 画像を貼る",
+    "code": ""
+  },
+  {
+    "name": "images_three",
+    "title": "21 画像を3つ並べる",
+    "code": ""
+  },
+  {
+    "name": "media_info",
+    "title": "22 お知らせなどの2段組み",
+    "code": ""
+  },
+  {
+    "name": "media_sns",
+    "title": "23 ソーシャルボックス",
+    "code": ""
+  },
+  {
+    "name": "media_staff",
+    "title": "24 スタッフ紹介・お客さんの声",
+    "code": ""
+  },
+  {
+    "name": "media_contact",
+    "title": "25 お店情報",
+    "code": ""
+  },
+  {
+    "name": "media_map",
+    "title": "26 地図",
+    "code": ""
+  },
+  {
+    "name": "blog",
+    "title": "27・28 ブログリスト",
+    "code": ""
+  },
+  {
+    "name": "footer_line",
+    "title": "29 フッター（1列）",
+    "code": ""
+  },
+  {
+    "name": "footer_cols",
+    "title": "30 フッター（4段組み）",
+    "code": ""
+  },
+  {
+    "name": "dummy_text",
+    "title": "31 文章を入れる",
+    "code": ""
+  }
+]
