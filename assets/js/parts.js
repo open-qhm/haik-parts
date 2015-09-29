@@ -127,7 +127,7 @@
         if (this.modal === false) {
           opener.postMessage({
             message: "sendCode",
-            code: item.code
+            code: $("#haik_parts_code_"+category.name+"_"+item.name).text()
           }, "*");
         }
         else {
