@@ -74,7 +74,16 @@
       dataType: "html"
     })
     .done(function(html){
-      $("#code_container").html(html);
+      var partsHtml = '';
+      var parts = vParts.categories;
+      for (var i in parts) {
+        for (var j in parts[i].items) {
+          if (typeof parts[i].items[j].code != '') {
+            partsHtml += '<script type="text/x-haik-code" id="haik_parts_code_'+parts[i].name + '_' + parts[i].items[j].name+'">' + parts[i].items[j].code + '</script>';
+          }
+        }
+      }
+      $("#code_container").html(html + partsHtml);
       promise.resolve(partsName);
     })
     .fail(function(err, error, message){
