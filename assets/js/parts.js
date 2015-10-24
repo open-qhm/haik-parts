@@ -3,6 +3,14 @@
   var opener = window.parent,
       partsName = '';
 
+  var exPaletteThemes = {
+    "haik_doc"    : null,
+    "haik_fabric" : null,
+    "haik_kinaco" : null,
+    "haik_pop"    : null,
+    "haik_tent"   : null
+  };
+
   if (location.hash.length > 1) {
     onHashChange();
   } else {
@@ -31,7 +39,10 @@
   function loadPartsData(partsName) {
     var promise = $.Deferred();
     if (partsName) {
-      partsFile = "data/" + partsName + ".parts.json";
+      partsFile = "data/palette.parts.json";
+      if (partsName in exPaletteThemes) {
+        partsFile = "data/" + partsName + ".parts.json";
+      }
     } else {
       partsFile = "data/parts.json";
     }
@@ -64,7 +75,10 @@
   function loadPartsSource(partsName) {
     var promise = $.Deferred();
     if (partsName) {
-      sourceFile = "data/code/" + partsName + ".code.html";
+      sourceFile = "data/code/palette.code.html";
+      if (partsName in exPaletteThemes) {
+        sourceFile = "data/code/" + partsName + ".code.html";
+      }
     } else {
       sourceFile = "data/code/code.html";
     }
