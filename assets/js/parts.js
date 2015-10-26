@@ -33,7 +33,8 @@
   $(window).on("hashchange", onHashChange);
 
   function onHashChange() {
-    partsName = location.hash.substr(1);
+    // remove GET query
+    partsName = location.hash.substr(1).split("?")[0];
     loadParts(partsName, function(){
       loadParts();
     });
