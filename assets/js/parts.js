@@ -11,6 +11,19 @@
     "haik_tent"   : null
   };
 
+  var simpleThemes = {
+    "haik_ikk"   : null,
+    "haik_nik"   : null,
+    "haik_sank"  : null,
+    "haik_yonk"  : null,
+    "haik_gok"   : null,
+    "haik_rokk"  : null,
+    "haik_nanak" : null,
+    "haik_hakk"  : null,
+    "haik_kyuk"  : null,
+    "haik_jikk"  : null
+  };
+
   if (location.hash.length > 1) {
     onHashChange();
   } else {
@@ -38,13 +51,13 @@
 
   function loadPartsData(partsName) {
     var promise = $.Deferred();
-    if (partsName) {
+    if (partsName in simpleThemes) {
+      partsFile = "data/parts.json";
+    } else {
       partsFile = "data/palette.parts.json";
       if (partsName in exPaletteThemes) {
         partsFile = "data/" + partsName + ".parts.json";
       }
-    } else {
-      partsFile = "data/parts.json";
     }
 
     $.ajax({
@@ -74,13 +87,13 @@
 
   function loadPartsSource(partsName) {
     var promise = $.Deferred();
-    if (partsName) {
+    if (partsName in simpleThemes) {
+      sourceFile = "data/code/code.html";
+    } else {
       sourceFile = "data/code/palette.code.html";
       if (partsName in exPaletteThemes) {
         sourceFile = "data/code/" + partsName + ".code.html";
       }
-    } else {
-      sourceFile = "data/code/code.html";
     }
 
     $.ajax({
