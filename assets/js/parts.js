@@ -51,12 +51,16 @@
 
   function loadPartsData(partsName) {
     var promise = $.Deferred();
-    if (partsName in simpleThemes) {
-      partsFile = "data/parts.json";
-    } else {
-      partsFile = "data/palette.parts.json";
-      if (partsName in exPaletteThemes) {
-        partsFile = "data/" + partsName + ".parts.json";
+    partsFile = "data/parts.json";
+    if (partsName) {
+      if (partsName in simpleThemes) {
+        partsFile = "data/parts.json";
+      }
+      else {
+        partsFile = "data/palette.parts.json";
+        if (partsName in exPaletteThemes) {
+          partsFile = "data/" + partsName + ".parts.json";
+        }
       }
     }
 
@@ -87,12 +91,15 @@
 
   function loadPartsSource(partsName) {
     var promise = $.Deferred();
-    if (partsName in simpleThemes) {
-      sourceFile = "data/code/code.html";
-    } else {
-      sourceFile = "data/code/palette.code.html";
-      if (partsName in exPaletteThemes) {
-        sourceFile = "data/code/" + partsName + ".code.html";
+    sourceFile = "data/code/code.html";
+    if (partsName) {
+      if (partsName in simpleThemes) {
+        sourceFile = "data/code/code.html";
+      } else {
+        sourceFile = "data/code/palette.code.html";
+        if (partsName in exPaletteThemes) {
+          sourceFile = "data/code/" + partsName + ".code.html";
+        }
       }
     }
 
