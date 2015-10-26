@@ -51,8 +51,8 @@
 
   function loadPartsData(partsName) {
     var promise = $.Deferred();
-    partsFile = "data/parts.json";
-    if (partsName) {
+    var partsFile = "data/parts.json";
+    if (typeof partsName !== "undefined") {
       if (partsName in simpleThemes) {
         partsFile = "data/parts.json";
       }
@@ -91,8 +91,8 @@
 
   function loadPartsSource(partsName) {
     var promise = $.Deferred();
-    sourceFile = "data/code/code.html";
-    if (partsName) {
+    var sourceFile = "data/code/code.html";
+    if (typeof partsName !== "undefined") {
       if (partsName in simpleThemes) {
         sourceFile = "data/code/code.html";
       } else {
